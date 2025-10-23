@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://da611avfbw4si"]
+
+[node name="TelaInicial" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Butfacil" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nível Fácil"
+
+[node name="Butmedio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nível Médio"
+
+[node name="Butdificil" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nível Difícil"
