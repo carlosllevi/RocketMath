@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dva2r5omf2ay8"]
+[gd_scene load_steps=6 format=3 uid="uid://dva2r5omf2ay8"]
 
 [ext_resource type="Texture2D" uid="uid://b5r01peqw23la" path="res://Assets/personagens/1.png" id="1_jyeai"]
+[ext_resource type="Script" uid="uid://dchas8mkfo2c8" path="res://Cenas/foguete.gd" id="1_vblsc"]
 [ext_resource type="Texture2D" uid="uid://bhm8fwhhab42p" path="res://Assets/personagens/2.png" id="2_vblsc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkdje"]
@@ -20,13 +21,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2327m"]
 size = Vector2(575, 283)
 
-[node name="Foguete" type="CharacterBody2D"]
+[node name="Foguete" type="CharacterBody2D" groups=["foguete"]]
+script = ExtResource("1_vblsc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_tkdje")
 autoplay = "default"
-frame_progress = 0.304179
+frame_progress = 0.550005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -3.5)

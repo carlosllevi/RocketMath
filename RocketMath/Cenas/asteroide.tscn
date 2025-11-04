@@ -1,19 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx4nu87404von"]
+[gd_scene load_steps=6 format=3 uid="uid://bx4nu87404von"]
 
 [ext_resource type="Texture2D" uid="uid://8el0f5o5u36h" path="res://Assets/planetas/Asteroide.png" id="1_bxbib"]
+[ext_resource type="Script" uid="uid://dofnv0crnc1dq" path="res://Cenas/asteroide.gd" id="1_layff"]
+[ext_resource type="Texture2D" uid="uid://birot6mq4mupw" path="res://Assets/planetas/Gemini_Generated_Image_b5nkz5b5nkz5b5nk__1_-removebg-preview.png" id="2_m04md"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m04md"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_m04md")
+}],
+"loop": true,
+"name": &"explodido",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"nada",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_bxbib")
 }],
 "loop": true,
-"name": &"default",
+"name": &"normal",
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_m04md"]
+radius = 75.2396
+
+[node name="Asteroide" type="Area2D"]
+script = ExtResource("1_layff")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m04md")
+animation = &"normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m04md")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
