@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cla3g8jn3yltn"]
+[gd_scene load_steps=5 format=3 uid="uid://cla3g8jn3yltn"]
 
 [ext_resource type="Texture2D" uid="uid://bha82pojghrt7" path="res://Assets/background/background.jpg" id="1_8aw2w"]
 [ext_resource type="Script" uid="uid://cet2lojpxwflp" path="res://Cenas/tela_de_vitoria.gd" id="1_fvj16"]
 [ext_resource type="FontFile" uid="uid://1sehkaj1cv7x" path="res://Assets/fontes/Pixel Digivolve.otf" id="2_fvj16"]
+[ext_resource type="AudioStream" uid="uid://xx4neqe483sk" path="res://Assets/audio/vitoriaCena.wav" id="4_j7xmv"]
 
 [node name="TelaDeVitoria" type="CanvasLayer"]
 script = ExtResource("1_fvj16")
@@ -45,5 +46,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_fvj16")
 theme_override_font_sizes/font_size = 32
 text = "jogar novamente"
+
+[node name="VitoriaCena" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j7xmv")
 
 [connection signal="pressed" from="ButJogar" to="." method="_on_but_jogar_pressed"]

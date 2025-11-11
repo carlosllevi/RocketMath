@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmjhvikuanjs7"]
+[gd_scene load_steps=4 format=3 uid="uid://dmjhvikuanjs7"]
 
 [ext_resource type="Script" uid="uid://cx8xu4866a5cg" path="res://Cenas/hud.gd" id="1_1pfdj"]
 [ext_resource type="Texture2D" uid="uid://c1xhbnehpq17l" path="res://Assets/hud/Heart.png" id="1_kgovw"]
+[ext_resource type="AudioStream" uid="uid://cd1mi5rw00hth" path="res://Assets/audio/perdeVida.wav" id="3_5udud"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_1pfdj")
@@ -20,3 +21,6 @@ texture = ExtResource("1_kgovw")
 position = Vector2(659.8506, 74.00001)
 scale = Vector2(0.167033, 0.167033)
 texture = ExtResource("1_kgovw")
+
+[node name="PerdeVida" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5udud")

@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=4 uid="uid://bgnyg6rucjceb"]
+[gd_scene load_steps=10 format=4 uid="uid://bgnyg6rucjceb"]
 
 [ext_resource type="Script" uid="uid://bwbr3nlvw8fpp" path="res://Cenas/facil.gd" id="1_byx33"]
 [ext_resource type="Texture2D" uid="uid://rq6uxi8celcg" path="res://Assets/background/fases.jpg" id="1_s6lhj"]
 [ext_resource type="PackedScene" uid="uid://dva2r5omf2ay8" path="res://Cenas/foguete.tscn" id="2_uadts"]
 [ext_resource type="PackedScene" uid="uid://bx4nu87404von" path="res://Cenas/asteroide.tscn" id="3_uadts"]
 [ext_resource type="PackedScene" uid="uid://djac1rcpnid5m" path="res://Cenas/linhaChegada.tscn" id="6_aewd3"]
+[ext_resource type="AudioStream" uid="uid://d07epleya4dvs" path="res://Assets/audio/musicaAbertura.mp3" id="6_llxb3"]
+[ext_resource type="AudioStream" uid="uid://dlwkwpdi15w5l" path="res://Assets/audio/tiro.wav" id="7_llxb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uadts"]
 texture = ExtResource("1_s6lhj")
@@ -256,20 +258,26 @@ position = Vector2(963, 200)
 id_asteroide = 1
 
 [node name="Asteroide2" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(2074, 227)
+position = Vector2(1926, 200)
 id_asteroide = 2
 
 [node name="Asteroide3" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(3430, 258)
+position = Vector2(2889, 200)
 id_asteroide = 3
 
 [node name="Asteroide4" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(4450, 222)
+position = Vector2(3852, 200)
 id_asteroide = 4
 
 [node name="Asteroide5" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(5386, 336)
+position = Vector2(4812, 200)
 id_asteroide = 5
 
 [node name="Area2D" parent="." instance=ExtResource("6_aewd3")]
-position = Vector2(5418, -330)
+position = Vector2(4844, -256)
+
+[node name="MusicaAbertura" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_llxb3")
+
+[node name="Tiro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_llxb3")

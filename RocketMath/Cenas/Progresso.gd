@@ -29,6 +29,7 @@ func perder_vida():
 		print("Vidas restantes: ", vidas_restantes) # Para debug
 		emit_signal("vidas_mudaram", vidas_restantes)
 		
+		
 		if vidas_restantes <= 0:
 			terminar_jogo_derrota()
 

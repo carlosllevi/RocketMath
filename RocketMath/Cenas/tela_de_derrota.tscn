@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckaf5etdwb2qr"]
+[gd_scene load_steps=5 format=3 uid="uid://ckaf5etdwb2qr"]
 
 [ext_resource type="Texture2D" uid="uid://bha82pojghrt7" path="res://Assets/background/background.jpg" id="1_cqnxf"]
 [ext_resource type="FontFile" uid="uid://1sehkaj1cv7x" path="res://Assets/fontes/Pixel Digivolve.otf" id="2_g7qx4"]
 [ext_resource type="Script" uid="uid://bftcdvlmkwixt" path="res://Cenas/msg_derrota.gd" id="3_g7qx4"]
+[ext_resource type="AudioStream" uid="uid://bipbewca3qgq5" path="res://Assets/audio/gameOverLoop.wav" id="4_8m38a"]
 
 [node name="TelaDeDerrota" type="CanvasLayer"]
 
@@ -45,5 +46,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_g7qx4")
 theme_override_font_sizes/font_size = 32
 text = "jogar novamente"
+
+[node name="GameOverLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8m38a")
 
 [connection signal="pressed" from="ButJogar" to="msgDerrota" method="_on_but_jogar_pressed"]

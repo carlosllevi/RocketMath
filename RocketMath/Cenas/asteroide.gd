@@ -20,3 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 		
 func explodir():
 	$AnimatedSprite2D.play("explodido")
+	$"../Tiro".play()
+	$"../Tiro".play()
+	$"../Tiro".play()

@@ -1,9 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://da611avfbw4si"]
+[gd_scene load_steps=9 format=3 uid="uid://da611avfbw4si"]
 
 [ext_resource type="Script" uid="uid://ctv375pageuaw" path="res://Cenas/tela_inicial.gd" id="1_00dnc"]
 [ext_resource type="Texture2D" uid="uid://bha82pojghrt7" path="res://Assets/background/background.jpg" id="1_b1rrf"]
 [ext_resource type="FontFile" uid="uid://1sehkaj1cv7x" path="res://Assets/fontes/Pixel Digivolve.otf" id="2_ouhyk"]
-[ext_resource type="PackedScene" uid="uid://dva2r5omf2ay8" path="res://Cenas/foguete.tscn" id="3_00dnc"]
+[ext_resource type="Texture2D" uid="uid://b5r01peqw23la" path="res://Assets/personagens/1.png" id="4_ubl30"]
+[ext_resource type="Texture2D" uid="uid://bhm8fwhhab42p" path="res://Assets/personagens/2.png" id="5_0bsfe"]
+[ext_resource type="AudioStream" uid="uid://d07epleya4dvs" path="res://Assets/audio/musicaAbertura.mp3" id="5_x33ye"]
+[ext_resource type="AudioStream" uid="uid://cqo8en4epswx" path="res://Assets/audio/sombotaoiniciar.wav" id="6_0nw1j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_331a0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ubl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0bsfe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="TelaInicial" type="CanvasLayer"]
 script = ExtResource("1_00dnc")
@@ -65,10 +82,19 @@ theme_override_fonts/font = ExtResource("2_ouhyk")
 theme_override_font_sizes/font_size = 32
 text = "Nível Difícil"
 
-[node name="Foguete" parent="." instance=ExtResource("3_00dnc")]
-position = Vector2(577, 510)
-rotation = -0.785398
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 535)
+rotation = 0.7853982
 scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_331a0")
+autoplay = "default"
+frame_progress = 0.098826885
+
+[node name="MusicaAbertura" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_x33ye")
+
+[node name="Sombotaoiniciar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0nw1j")
 
 [connection signal="pressed" from="VBoxContainer/Butfacil" to="." method="_on_butfacil_pressed"]
 [connection signal="pressed" from="VBoxContainer/Butmedio" to="." method="_on_butmedio_pressed"]

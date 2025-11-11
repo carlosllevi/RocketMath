@@ -26,3 +26,4 @@ func _on_vidas_mudaram(vidas_atuais: int):
 			sprite_vida.visible = true
 		else:
 			sprite_vida.visible = false
+			$PerdeVida.play()
