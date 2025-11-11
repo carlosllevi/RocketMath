@@ -1,18 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx4nu87404von"]
+[gd_scene load_steps=7 format=3 uid="uid://bx4nu87404von"]
 
 [ext_resource type="Texture2D" uid="uid://8el0f5o5u36h" path="res://Assets/planetas/Asteroide.png" id="1_bxbib"]
 [ext_resource type="Script" uid="uid://dofnv0crnc1dq" path="res://Cenas/asteroide.gd" id="1_layff"]
 [ext_resource type="Texture2D" uid="uid://birot6mq4mupw" path="res://Assets/planetas/Gemini_Generated_Image_b5nkz5b5nkz5b5nk__1_-removebg-preview.png" id="2_m04md"]
+[ext_resource type="Texture2D" uid="uid://dsp6h1u3faht8" path="res://Assets/planetas/transparente.png" id="3_xgyxd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m04md"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_m04md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xgyxd")
 }],
-"loop": true,
+"loop": false,
 "name": &"explodido",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [],
 "loop": true,
@@ -37,6 +41,7 @@ script = ExtResource("1_layff")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m04md")
 animation = &"normal"
+autoplay = "normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m04md")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bgnyg6rucjceb"]
+[gd_scene load_steps=8 format=4 uid="uid://bgnyg6rucjceb"]
 
+[ext_resource type="Script" uid="uid://bwbr3nlvw8fpp" path="res://Cenas/facil.gd" id="1_byx33"]
 [ext_resource type="Texture2D" uid="uid://rq6uxi8celcg" path="res://Assets/background/fases.jpg" id="1_s6lhj"]
 [ext_resource type="PackedScene" uid="uid://dva2r5omf2ay8" path="res://Cenas/foguete.tscn" id="2_uadts"]
 [ext_resource type="PackedScene" uid="uid://bx4nu87404von" path="res://Cenas/asteroide.tscn" id="3_uadts"]
+[ext_resource type="PackedScene" uid="uid://djac1rcpnid5m" path="res://Cenas/linhaChegada.tscn" id="6_aewd3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uadts"]
 texture = ExtResource("1_s6lhj")
@@ -235,6 +237,7 @@ texture = ExtResource("1_s6lhj")
 sources/0 = SubResource("TileSetAtlasSource_uadts")
 
 [node name="Facil" type="Node"]
+script = ExtResource("1_byx33")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(386, 202)
@@ -261,9 +264,12 @@ position = Vector2(3430, 258)
 id_asteroide = 3
 
 [node name="Asteroide4" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(7759, 216)
+position = Vector2(4450, 222)
 id_asteroide = 4
 
 [node name="Asteroide5" parent="." instance=ExtResource("3_uadts")]
-position = Vector2(10225, 208)
+position = Vector2(5386, 336)
 id_asteroide = 5
+
+[node name="Area2D" parent="." instance=ExtResource("6_aewd3")]
+position = Vector2(5418, -330)

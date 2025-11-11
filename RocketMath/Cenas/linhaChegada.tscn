@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djac1rcpnid5m"]
+
+[ext_resource type="Script" uid="uid://dybap612eqjcf" path="res://Cenas/linha_chegada.gd" id="1_dwy0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etmch"]
+size = Vector2(216, 1895)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_dwy0q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(113, 577)
+shape = SubResource("RectangleShape2D_etmch")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

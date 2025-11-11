@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://boblug0bdoqiw"]
+[gd_scene load_steps=5 format=3 uid="uid://boblug0bdoqiw"]
 
 [ext_resource type="Texture2D" uid="uid://bha82pojghrt7" path="res://Assets/background/background.jpg" id="1_8wn33"]
 [ext_resource type="Script" uid="uid://bhlndff6kbse6" path="res://Cenas/operacoes.gd" id="1_ubgwi"]
 [ext_resource type="FontFile" uid="uid://1sehkaj1cv7x" path="res://Assets/fontes/Pixel Digivolve.otf" id="2_4saif"]
+[ext_resource type="PackedScene" uid="uid://dmjhvikuanjs7" path="res://Cenas/hud.tscn" id="4_xlkrv"]
 
 [node name="Operacoes" type="Node"]
 script = ExtResource("1_ubgwi")
@@ -60,5 +61,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
 text = "        8        "
+
+[node name="Hud" parent="." instance=ExtResource("4_xlkrv")]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
