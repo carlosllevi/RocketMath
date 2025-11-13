@@ -7,18 +7,13 @@ extends CanvasLayer
 var sprites_vidas: Array
 
 func _ready():
-	# Armazena as sprites em ordem para fácil iteração
 	sprites_vidas = [vida_1, vida_2, vida_3]
 	
-	# Conecta ao sinal do Autoload
 	Progresso.vidas_mudaram.connect(_on_vidas_mudaram)
 	
-	# Inicializa a exibição (útil ao carregar a cena)
 	_on_vidas_mudaram(Progresso.vidas_restantes)
 
-# Função chamada quando a contagem de vidas muda
 func _on_vidas_mudaram(vidas_atuais: int):
-	# Itera sobre as sprites para mostrar/esconder
 	for i in range(Progresso.MAX_VIDAS):
 		var sprite_vida = sprites_vidas[i]
 		
